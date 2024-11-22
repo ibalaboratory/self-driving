@@ -55,11 +55,12 @@ public class WaypointsController : MonoBehaviour
         }
     }
 
-    public Vector3 GetFirstNextDirection() {
-    return GetComponentsInChildren<Waypoint>()
+    public Vector3 GetFirstNextDirection()
+    {
+        return GetComponentsInChildren<Waypoint>()
         .Where(x => x.transform != Prefab.transform)
         .Where(x => x.transform != transform)
         .OrderBy(x => x.Index)
         .ToList().Last().NextDirection;
-}
+    }
 }
