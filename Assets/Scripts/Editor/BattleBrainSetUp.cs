@@ -12,7 +12,7 @@ public class BattleBrainSetUp: EditorWindow
     string studentName = "Fujita";
     string templatePath = "Assets/Scripts/Editor/TemplateBattleBrain.txt";
 
-    [MenuItem("Tools/Create Student Folder")]
+    [MenuItem("Tools/Set Up BattleBrain")]
     public static void ShowWindow()
     {
         GetWindow<BattleBrainSetUp>("Set Up BattleBrain");
