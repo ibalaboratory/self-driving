@@ -42,6 +42,9 @@ public class NEEnvironment : Environment
     [Header("Agent Prefab"), SerializeField] private GameObject gObject = null;
     private GameObject GObject => gObject;
 
+    [SerializeField] private bool isChallenge4 = false;
+    private bool IsChallenge4 { get { return isChallenge4; } }
+
     [Header("UI References"), SerializeField] private Text populationText = null;
     private Text PopulationText { get { return populationText; } }
 
@@ -59,6 +62,8 @@ public class NEEnvironment : Environment
 
     private List<AgentPair> AgentsSet { get; } = new List<AgentPair>();
     private Queue<NNBrain> CurrentBrains { get; set; }
+
+    private List<Obstacle> Obstacles { get; } = new List<Obstacle>();
 
     void Start() {
         // Calculate and set input size.
@@ -96,6 +101,9 @@ public class NEEnvironment : Environment
 
         BestRecord = -9999;
         SetStartAgents();
+        if (IsChallenge4) {
+            Obstacles.AddRange(FindObjectsOfType<Obstacle>());
+        }
     }
 
     void SetStartAgents() {
