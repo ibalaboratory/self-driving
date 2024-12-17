@@ -135,8 +135,19 @@ public class Obstacle : MonoBehaviour
             }else{
                 ResetPosition();
             }
-            
+
         }
-        
+
+    }
+
+    public void FixedUpdate()
+    {
+        if (transform.position.y < -5.0) {
+            if (is_stage3) {
+                ResetRandomAndForce(Target);
+            } else {
+                ResetPosition();
+            }
+        }
     }
 }
