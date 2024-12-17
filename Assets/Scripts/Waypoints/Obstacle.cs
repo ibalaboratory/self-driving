@@ -135,9 +135,7 @@ public class Obstacle : MonoBehaviour
             }else{
                 ResetPosition();
             }
-
         }
-
     }
 
     public void FixedUpdate()
